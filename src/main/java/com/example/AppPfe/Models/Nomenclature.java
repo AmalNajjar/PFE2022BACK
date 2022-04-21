@@ -1,5 +1,6 @@
 package com.example.AppPfe.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,6 +26,9 @@ public final class Nomenclature implements Serializable {
     private String dureeConservation_1ereAge;
     private String dureeConservation_2emeAge;
     private String valeurHistorique_3emeAge;
-    //@ManyToOne(cascade = CascadeType.ALL)
-   private suivi_document suivi_document;
+    @OneToMany(mappedBy = "designation_Nomenclature")
+    @JsonIgnore
+   private List<suivi_doc_1ereAge> suivi_document=new ArrayList<>();
+
+
 }

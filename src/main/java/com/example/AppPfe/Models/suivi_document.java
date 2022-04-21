@@ -12,7 +12,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@MappedSuperclass
+@Entity
 abstract public class suivi_document implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

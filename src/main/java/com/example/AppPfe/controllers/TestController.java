@@ -49,7 +49,10 @@ public class TestController {
 
     return "Admin Board.";
   }
-
+@PostMapping("/lieu")
+LieuArchive savelieu(@RequestBody()LieuArchive l){
+      return  this.lieuArchiveRepository.save(l);
+}
     @GetMapping("/lieu")
     List<LieuArchive> getAll(){
         return lieuArchiveRepository.findAll();
@@ -59,16 +62,6 @@ public class TestController {
     Optional<LieuArchive> getById(@PathVariable("id") Long id){
         System.out.println(id);
         return lieuArchiveRepository.findById(id);
-    }
-    @GetMapping("/type")
-    List<TypeDirection> gettAll(){
-        return typeDirectionrepo.findAll();
-    }
-
-    @GetMapping("/type/{id}")
-    Optional<TypeDirection> gettById(@PathVariable("id") Long id){
-        System.out.println(id);
-        return typeDirectionrepo.findById(id);
     }
 
 
@@ -190,8 +183,8 @@ public class TestController {
 //gestion Nomenclature
 
   @PostMapping("/Nomenclature")
-  public void register(@RequestBody Nomenclature nomenclature)  {
-    nomenclatureRepositories.save(nomenclature);
+  public Nomenclature register(@RequestBody Nomenclature nomenclature)  {
+   return this.nomenclatureRepositories.save(nomenclature);
 
   }
 
@@ -243,8 +236,9 @@ public class TestController {
 //traitement 1 ere age
 
     @PostMapping("/SuiviDocument")
-    public void saveDocument(@RequestBody suivi_doc_1ereAge suivi_doc_1ereAge) {
-      suivi1ereage.save(suivi_doc_1ereAge);}
+    public suivi_doc_1ereAge saveDocument(@RequestBody suivi_doc_1ereAge suivi_doc_1ereAge) {
+        System.out.println(suivi_doc_1ereAge);
+      return this.suivi1ereage.save(suivi_doc_1ereAge);}
   @GetMapping("/SuiviDocuments")
   public List<suivi_doc_1ereAge> getAllDocuments() {
     return  suivi1ereage.findAll();

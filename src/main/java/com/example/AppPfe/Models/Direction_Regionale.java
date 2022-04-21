@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table
-    public class Direction_Regionale {
+    public class Direction_Regionale implements Serializable {
             @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
             private Long id;
@@ -32,7 +33,7 @@ import java.util.List;
 @ManyToOne(cascade = CascadeType.MERGE)
 @JoinColumn(name ="typeDirection",referencedColumnName = "libelle_type_dir")
 private TypeDirection typeDirection;
-@OneToMany(cascade = CascadeType.MERGE)
+@OneToMany
 @JsonIgnore
    private List<suivi_doc_1ereAge> suivi_documents=new ArrayList<>();
 
