@@ -23,6 +23,9 @@ public class suivi_doc_1ereAge  {
     private Date Date_De_creation_Du_Document;
     private Date Date_d_entree_Du_Document;
     private int Nombre_De_documents ;
+    private int codedocument;
+    private int emplacement_physique;
+    private int numero_d_ordre;
     @ManyToOne
     @JoinColumn(name ="designation_Nomenclature",referencedColumnName = "designation_Nomenclature")
     private Nomenclature designation_Nomenclature;

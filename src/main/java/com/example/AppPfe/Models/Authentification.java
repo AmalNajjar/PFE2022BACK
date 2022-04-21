@@ -28,7 +28,7 @@ public class Authentification {
     private String email;
     @ManyToMany(fetch = FetchType.LAZY)
 
-    private Set<Role> role = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
 
     public Authentification() {

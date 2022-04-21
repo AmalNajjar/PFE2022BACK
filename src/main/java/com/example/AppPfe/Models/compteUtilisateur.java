@@ -5,20 +5,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
-@Entity @Data @NoArgsConstructor @AllArgsConstructor @ToString
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
 public class compteUtilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String password;
+    private Integer id;
     private String nom;
     private String prenom;
+    private String  password;
+    @Column(unique =true)
     private String email;
     private String direction;
 }
+
+
