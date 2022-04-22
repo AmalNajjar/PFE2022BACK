@@ -19,11 +19,11 @@ import java.util.List;
 @Table
 public class TypeDirection implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String codeType_dir;
     private String libelle_type_dir;
-    @OneToMany(mappedBy = "typeDirection",cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "typeDirection")
     @JsonIgnore
     private List<Direction_Regionale> direction_regionaleList=new ArrayList<>();
 

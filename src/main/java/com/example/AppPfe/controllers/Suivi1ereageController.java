@@ -1,9 +1,9 @@
 package com.example.AppPfe.controllers;
 
 import com.example.AppPfe.Models.suivi_doc_1ereAge;
+import com.example.AppPfe.exception.ResourceNotFoundException;
 import com.example.AppPfe.repository.Suivi1ereage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

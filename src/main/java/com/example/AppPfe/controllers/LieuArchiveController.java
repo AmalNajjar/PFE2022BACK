@@ -15,6 +15,7 @@ public class LieuArchiveController {
     lieuArchiveRepo lieuArchiveRepository;
     @PostMapping("/lieu")
     LieuArchive savelieu(@RequestBody()LieuArchive l){
+        System.out.println(l);
         return  this.lieuArchiveRepository.save(l);
     }
     @GetMapping("/lieu")

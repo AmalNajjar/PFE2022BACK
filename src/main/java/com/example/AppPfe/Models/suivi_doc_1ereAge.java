@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
@@ -12,7 +13,7 @@ import java.sql.Date;
 @ToString
 @NoArgsConstructor
 @Table
-public class suivi_doc_1ereAge  {
+public class suivi_doc_1ereAge {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

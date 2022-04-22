@@ -28,7 +28,9 @@ public final class Nomenclature implements Serializable {
     private String valeurHistorique_3emeAge;
     @OneToMany(mappedBy = "designation_Nomenclature")
     @JsonIgnore
-   private List<suivi_doc_1ereAge> suivi_document=new ArrayList<>();
-
+    private List<suivi_doc_1ereAge> suivi_document=new ArrayList<>();
+    @OneToMany(mappedBy = "designation_nomenclature")
+    @JsonIgnore
+    private List<demandeDeVersement> demandedeVersements = new ArrayList<>();
 
 }

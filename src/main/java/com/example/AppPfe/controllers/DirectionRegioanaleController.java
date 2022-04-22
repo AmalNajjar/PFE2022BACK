@@ -1,9 +1,9 @@
 package com.example.AppPfe.controllers;
 
 import com.example.AppPfe.Models.Direction_Regionale;
+import com.example.AppPfe.exception.ResourceNotFoundException;
 import com.example.AppPfe.repository.DirectionRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
