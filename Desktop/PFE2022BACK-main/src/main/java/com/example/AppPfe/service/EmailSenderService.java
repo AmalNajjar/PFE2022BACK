@@ -23,7 +23,7 @@ public class EmailSenderService {
         SimpleMailMessage message=new SimpleMailMessage();
         message.setFrom("najjaramal220@gmail.com");
         message.setTo(toEmail);
-        message.setText("code: "+body.getCode()+" date: "+body.getDate_()+" Materiels: "+body.getMateriel()+ " humaines: "+body.getHumain());
+        message.setText("Code de plan d'enlèvement: "+body.getCode()+"\n"+"Date d'enlèvement: "+body.getDate_()+"\n"+"Moyens Materiels: "+body.getMateriel()+"\n"+"Moyens humains: "+body.getHumain());
         message.setSubject(subject);
         mailSender.send(message);
         System.out.println("Mail sent successfully...");
