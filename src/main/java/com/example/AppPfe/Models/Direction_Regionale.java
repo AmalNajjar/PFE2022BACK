@@ -23,7 +23,6 @@ public class Direction_Regionale implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String codedirection;
     private String libelleDirection;
     @ManyToOne
@@ -38,6 +37,11 @@ public class Direction_Regionale implements Serializable {
     @OneToMany
     @JsonIgnore
     private List<suivi_doc_1ereAge> suivi_documents=new ArrayList<>();
+
+    @OneToMany
+    @JsonIgnore
+    private List<suivi_doc_2emeAge> suivi_document2eme=new ArrayList<>();
+
 
     @OneToMany(mappedBy = "Expediteur")
     @JsonIgnore

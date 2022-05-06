@@ -33,7 +33,7 @@ public class Suivi1ereageController {
                 .orElseThrow(() -> new ResourceNotFoundException("Document not found"));
         return ResponseEntity.ok().body(suivi_doc_1ereAge);
     }
-   /* @PutMapping("/SuiviDocuments/{id}")
+    @PutMapping("/SuiviDocuments/{id}")
     public ResponseEntity<suivi_doc_1ereAge> updateDoc1ereage(@PathVariable(value = "id") Long id,
                                                               @RequestBody suivi_doc_1ereAge suivi_doc_1ereAgeDetails)
             throws ResourceNotFoundException {
@@ -45,7 +45,9 @@ public class Suivi1ereageController {
         suivi_doc_1ereAge.setDesignation_Nomenclature(suivi_doc_1ereAgeDetails.getDesignation_Nomenclature());
 
         suivi_doc_1ereAge.setId(suivi_doc_1ereAgeDetails.getId());
-
+        suivi_doc_1ereAge.setNumero_d_ordre(suivi_doc_1ereAgeDetails.getNumero_d_ordre());
+        suivi_doc_1ereAge.setEmplacement_physique(suivi_doc_1ereAgeDetails.getEmplacement_physique());
+        suivi_doc_1ereAge.setCodedocument(suivi_doc_1ereAgeDetails.getCodedocument());
         suivi_doc_1ereAge.setChapitre_comptable(suivi_doc_1ereAgeDetails.getChapitre_comptable());
         suivi_doc_1ereAge.setDate_d_entree_Du_Document(suivi_doc_1ereAgeDetails.getDate_d_entree_Du_Document());
         suivi_doc_1ereAge.setDate_De_creation_Du_Document(suivi_doc_1ereAgeDetails.getDate_De_creation_Du_Document());
@@ -53,10 +55,11 @@ public class Suivi1ereageController {
         suivi_doc_1ereAge.setNombre_De_documents(suivi_doc_1ereAgeDetails.getNombre_De_documents());
         suivi_doc_1ereAge.setNumero_document(suivi_doc_1ereAgeDetails.getNumero_document());
         suivi_doc_1ereAge.setNombre_De_pages(suivi_doc_1ereAgeDetails.getNombre_De_pages());
-
+        suivi_doc_1ereAge.setDesignation_Nomenclature(suivi_doc_1ereAgeDetails.getDesignation_Nomenclature());
+        suivi_doc_1ereAge.setLibelleDirection(suivi_doc_1ereAgeDetails.getLibelleDirection());
 
         final suivi_doc_1ereAge updateDoc1ereage = suivi1ereage.save(suivi_doc_1ereAge);
         return ResponseEntity.ok(updateDoc1ereage);
     }
-*/
+
 }

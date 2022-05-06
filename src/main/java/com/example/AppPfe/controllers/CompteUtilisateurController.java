@@ -51,7 +51,7 @@ public class CompteUtilisateurController {
 
         compte.setNom(compteDetails.getNom());
         compte.setPrenom(compteDetails.getPrenom());
-        compte.setDirection(compteDetails.getDirection());
+        // compte.setTypeDirections(compteDetails.getTypeDirections());
         compte.setEmail(compteDetails.getEmail());
         compte.setPassword(compteDetails.getPassword());
         final compteUtilisateur updateCompte  = compteRepository.save(compte);

@@ -16,12 +16,11 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Entity
-public final class Nomenclature implements Serializable {
+public class Nomenclature implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int code_Nomenclature;
-
     private String designation_Nomenclature;
     private String dureeConservation_1ereAge;
     private String dureeConservation_2emeAge;
@@ -32,5 +31,7 @@ public final class Nomenclature implements Serializable {
     @OneToMany(mappedBy = "designation_nomenclature")
     @JsonIgnore
     private List<demandeDeVersement> demandedeVersements = new ArrayList<>();
-
+    @OneToMany(mappedBy = "designation_Nomenclature")
+    @JsonIgnore
+    private List<suivi_doc_2emeAge> suivi_documents=new ArrayList<>();
 }

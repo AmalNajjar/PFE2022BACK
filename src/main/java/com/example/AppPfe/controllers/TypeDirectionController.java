@@ -11,20 +11,20 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 
-@RequestMapping("/api/type")
+@RequestMapping("/api/test/")
 public class TypeDirectionController {
     @Autowired
     TypeDirectionrepo typeDirectionrepo;
-    @PostMapping()
+    @PostMapping("/type")
     TypeDirection Save(@RequestBody()TypeDirection typeDirection){
         return this.typeDirectionrepo.save(typeDirection);
     }
-    @GetMapping()
+    @GetMapping("/type")
     List<TypeDirection> gettAll(){
         return typeDirectionrepo.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("type/{id}")
     Optional<TypeDirection> gettById(@PathVariable("id") Long id){
         System.out.println(id);
         return typeDirectionrepo.findById(id);

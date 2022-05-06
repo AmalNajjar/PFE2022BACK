@@ -17,6 +17,7 @@ public class compteUtilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer matricule;
     private String nom;
     private String prenom;
     private String  password;
