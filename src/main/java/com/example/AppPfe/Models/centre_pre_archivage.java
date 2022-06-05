@@ -20,7 +20,7 @@ import java.util.List;
 @ToString
 @Entity
 @Table
-public class centre_pre_archivage implements Serializable {
+public class Centre_pre_archivage implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int code_centre;
@@ -28,5 +28,5 @@ public class centre_pre_archivage implements Serializable {
 
     @OneToMany
     @JsonIgnore
-    private List<suivi_doc_2emeAge> suivi_documents=new ArrayList<>();
+    private List<Suivi_doc_2èmeâge> suivi_documents=new ArrayList<>();
 }

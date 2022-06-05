@@ -13,7 +13,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @ToString
 @Entity
-abstract public class suivi_document implements Serializable {
+abstract public class Suivi_document implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,9 +27,7 @@ abstract public class suivi_document implements Serializable {
     @OneToOne
     @JoinColumn(name ="designation_Nomenclature",referencedColumnName = "designation_Nomenclature")
     private Nomenclature designation_Nomenclature;
-    //@ManyToMany(cascade = CascadeType.ALL)
-    //@JoinColumn(name ="designation_Nomenclature",referencedColumnName = "id")
-    //private List<Nomenclature> designation_Nomenclature=new ArrayList<>();
+
 
 
 

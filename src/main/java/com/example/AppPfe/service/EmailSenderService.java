@@ -21,7 +21,7 @@ public class EmailSenderService {
                           String subject,
                           emailData body){
         SimpleMailMessage message=new SimpleMailMessage();
-        message.setFrom("chaymagharbi615@gmail.com");
+        message.setFrom("responsabledag@gmail.com");
         message.setTo(toEmail);
         message.setText("Code de plan d'enlèvement: "+body.getCode()+"\n"+"Date d'enlèvement: "+body.getDate_()+"\n"+"Moyens Materiels: "+body.getMateriel()+"\n"+"Moyens humains: "+body.getHumain());
         message.setSubject(subject);
@@ -32,9 +32,9 @@ public class EmailSenderService {
                                String subject,
                                String body){
         SimpleMailMessage message=new SimpleMailMessage();
-        message.setFrom("najjaramal220@gmail.com");
+        message.setFrom("responsabledag@gmail.com");
         message.setTo(toEmail);
-        message.setText("Ecart egale 0");
+        message.setText("Un écart est constaté");
         message.setSubject(subject);
         mailSender.send(message);
         System.out.println("Mail sent successfully...");
@@ -49,7 +49,7 @@ public class EmailSenderService {
         MimeMessageHelper mimeMessageHelper
                 =new MimeMessageHelper(mimeMessage,true);
 
-        mimeMessageHelper.setFrom("chaymagharbi615@gmail.com");
+        mimeMessageHelper.setFrom("responsabledag@gmail.com");
         mimeMessageHelper.setTo(toEmail);
         mimeMessageHelper.setText(body);
         mimeMessageHelper.setSubject(subject);

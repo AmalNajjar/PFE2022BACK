@@ -18,7 +18,7 @@ public class NomenclatureController {
     @Autowired
     NomenclatureRepositories nomenclatureRepositories ;
     @PostMapping("/Nomenclature")
-    public Nomenclature register(@RequestBody Nomenclature nomenclature)  {
+    public Nomenclature créer_nomenclature(@RequestBody Nomenclature nomenclature)  {
         return this.nomenclatureRepositories.save(nomenclature);
 
     }
@@ -29,20 +29,20 @@ public class NomenclatureController {
     }
 
     @GetMapping("/Nomenclatures/{id}")
-    public ResponseEntity<Nomenclature> getNomenclatureById(@PathVariable(value = "id") Long id)
+    public ResponseEntity<Nomenclature> consulter_nomenclature(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         Nomenclature nomenclature =nomenclatureRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature n'existe pas"));
         return ResponseEntity.ok().body(nomenclature);
     }
 
 
     @PutMapping("/Nomenclatures/{id}")
-    public ResponseEntity<Nomenclature> updateNomenclature(@PathVariable(value = "id") Long id,
+    public ResponseEntity<Nomenclature> modifier_nomenclature(@PathVariable(value = "id") Long id,
                                                            @RequestBody Nomenclature nomenclatureDetails)
             throws ResourceNotFoundException {
         Nomenclature nomenclature= nomenclatureRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature n'existe pas"));
 
 
         nomenclature.setCode_Nomenclature(nomenclatureDetails.getCode_Nomenclature());
@@ -59,10 +59,10 @@ public class NomenclatureController {
     }
 
     @DeleteMapping("/Nomenclatures/{id}")
-    public Map<String, Boolean> deleteNomenclature(@PathVariable(value = "id") Long id)
+    public Map<String, Boolean> supprimer_nomenclature(@PathVariable(value = "id") Long id)
             throws ResourceNotFoundException {
         Nomenclature nomenclature=nomenclatureRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Nomenclature n'existe pas"));
         nomenclatureRepositories.delete(nomenclature);
         Map<String, Boolean> response = new HashMap<>();
         response.put("delete", Boolean.TRUE);

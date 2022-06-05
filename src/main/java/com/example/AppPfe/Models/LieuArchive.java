@@ -26,6 +26,6 @@ public class LieuArchive implements Serializable {
 
     @OneToMany(mappedBy = "Destinataire")
     @JsonIgnore
-    private List<demandeDeVersement> demandeVersement=new ArrayList<>();
+    private List<Demande_de_versement> demandeVersement=new ArrayList<>();
 
 }

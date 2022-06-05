@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
-public class compteUtilisateur {
+public class CompteUtilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,7 +23,9 @@ public class compteUtilisateur {
     private String  password;
     @Column(unique =true)
     private String email;
-    private String direction;
+    @ManyToOne
+    @JoinColumn(name ="libelleDirection",referencedColumnName = "libelleDirection")
+    private Direction_Regionale libelleDirection;
 }
 
 

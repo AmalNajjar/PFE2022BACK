@@ -1,7 +1,7 @@
 package com.example.AppPfe.service;
 
-import com.example.AppPfe.Models.compteUtilisateur;
+import com.example.AppPfe.Models.CompteUtilisateur;
 
 public interface compteUtilisateurService {
-    public Integer savecompteUtilisateur(compteUtilisateur compte);
+    public Integer savecompteUtilisateur(CompteUtilisateur compte);
 }

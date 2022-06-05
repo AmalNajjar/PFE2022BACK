@@ -1,6 +1,6 @@
 package com.example.AppPfe.service;
 
-import com.example.AppPfe.Models.compteUtilisateur;
+import com.example.AppPfe.Models.CompteUtilisateur;
 import com.example.AppPfe.repository.compteUtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ public class CompteUtilisateurImpl implements compteUtilisateurService{
     private compteUtilisateurRepository repository;
 
     @Override
-    public Integer savecompteUtilisateur(compteUtilisateur compte) {
+    public Integer savecompteUtilisateur(CompteUtilisateur compte) {
         return repository.save(compte).getId();
     }
 }

@@ -27,11 +27,11 @@ public class Nomenclature implements Serializable {
     private String valeurHistorique_3emeAge;
     @OneToMany(mappedBy = "designation_Nomenclature")
     @JsonIgnore
-    private List<suivi_doc_1ereAge> suivi_document=new ArrayList<>();
+    private List<Suivi_doc_1erâge> suivi_document=new ArrayList<>();
     @OneToMany(mappedBy = "designation_nomenclature")
     @JsonIgnore
-    private List<demandeDeVersement> demandedeVersements = new ArrayList<>();
+    private List<Demande_de_versement> demandedeVersements = new ArrayList<>();
     @OneToMany(mappedBy = "designation_Nomenclature")
     @JsonIgnore
-    private List<suivi_doc_2emeAge> suivi_documents=new ArrayList<>();
+    private List<Suivi_doc_2èmeâge> suivi_documents=new ArrayList<>();
 }

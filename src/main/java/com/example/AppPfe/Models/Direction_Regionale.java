@@ -31,20 +31,29 @@ public class Direction_Regionale implements Serializable {
     @ManyToOne
     @JoinColumn(name ="lieu_d_archivage_2_eme_age",referencedColumnName ="Lieu")
     private LieuArchive lieu_d_archivage_2_eme_age;
-    @ManyToOne(cascade = CascadeType.MERGE)
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name ="typeDirection",referencedColumnName = "libelle_type_dir")
     private TypeDirection typeDirection;
-    @OneToMany
-    @JsonIgnore
-    private List<suivi_doc_1ereAge> suivi_documents=new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<suivi_doc_2emeAge> suivi_document2eme=new ArrayList<>();
+    private List<Suivi_doc_1erâge> suivi_documents=new ArrayList<>();
 
-
-    @OneToMany(mappedBy = "Expediteur")
+    @OneToMany(cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<demandeDeVersement> demandeVersements = new ArrayList<>();
+    private List<Suivi_doc_2èmeâge> suivi_document2eme=new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Suivi_doc_3èmeâge> suivi_document3eme=new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<CompteUtilisateur> compteUtilisateurs=new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "Expediteur")
+    @JsonIgnore
+    private List<Demande_de_versement> demandeVersements = new ArrayList<>();
 
 }

@@ -25,7 +25,7 @@ public class emailController {
     @PostMapping("/ecart")
     public boolean sendEcart(@RequestBody mailBodyEcart mailBodyEcart){
         System.out.println(mailBodyEcart);
-        this.sender.sendEmailEcart(mailBodyEcart.getToEmail(),"Notification Ecart","Ecart egale 0");
+        this.sender.sendEmailEcart(mailBodyEcart.getToEmail(),"Notification Ecart","Un écart est constaté");
 
         return true;
     }

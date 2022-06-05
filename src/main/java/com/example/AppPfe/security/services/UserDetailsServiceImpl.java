@@ -1,7 +1,7 @@
 package com.example.AppPfe.security.services;
 
 import com.example.AppPfe.Models.Authentification;
-import com.example.AppPfe.repository.RegistrationAuthtificationRepositories;
+import com.example.AppPfe.repository.AuthtificationRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
-  RegistrationAuthtificationRepositories userRepository;
+  AuthtificationRepositories userRepository;
 
   @Override
   @Transactional

@@ -1,9 +1,9 @@
 package com.example.AppPfe.service;
 
-import com.example.AppPfe.Models.suivi_document;
+import com.example.AppPfe.Models.Suivi_document;
 
 import java.util.List;
 
 public interface interSuivi {
-    public List<suivi_document> findAll();
+    public List<Suivi_document> findAll();
 }

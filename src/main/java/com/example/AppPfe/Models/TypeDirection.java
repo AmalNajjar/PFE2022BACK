@@ -28,11 +28,6 @@ public class TypeDirection implements Serializable {
     private List<Direction_Regionale> direction_regionaleList=new ArrayList<>();
 
 
-    //@JsonIgnore
-    //private Direction_Regionale directionRegionale;
-    //@OneToMany
-    //@JoinColumn(name = "libelleDirection",referencedColumnName = "libelleDirection")
-    //List<Direction_Regionale> typedirection= new ArrayList<>();
 
 
 

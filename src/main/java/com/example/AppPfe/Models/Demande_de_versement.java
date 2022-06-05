@@ -15,7 +15,7 @@ import java.sql.Date;
 @ToString
 @Entity
 @Table
-public class demandeDeVersement implements Serializable {
+public class Demande_de_versement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,7 +27,7 @@ public class demandeDeVersement implements Serializable {
     @ManyToOne
     @JoinColumn(name ="Destinataire",referencedColumnName ="Lieu")
     private LieuArchive Destinataire;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name ="Expediteur",referencedColumnName ="libelleDirection")
     private Direction_Regionale Expediteur;
     @ManyToOne

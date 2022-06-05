@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface  RegistrationAuthtificationRepositories extends JpaRepository<Authentification,Long> {
+public interface AuthtificationRepositories extends JpaRepository<Authentification,Long> {
 
 
     Optional<Authentification> findByUsername(String username);

@@ -19,7 +19,7 @@ public class AgenceController {
     @Autowired
     AgenceRepositories agenceRepositories;
     @PostMapping("/Agence")
-    public Agence register(@RequestBody Agence agence)  {
+    public Agence créer_agence(@RequestBody Agence agence)  {
         System.out.println(agence);
         return agenceRepositories.save(agence);
 
@@ -31,20 +31,20 @@ public class AgenceController {
     }
 
     @GetMapping("/Agences/{id}")
-    public ResponseEntity<Agence> getAgenceById(@PathVariable(value = "id") Integer id)
+    public ResponseEntity<Agence> consulter_agence(@PathVariable(value = "id") Integer id)
             throws ResourceNotFoundException {
         Agence agence = agenceRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Agence not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Agence n'existe pas"));
         return ResponseEntity.ok().body(agence);
     }
 
 
     @PutMapping("/Agences/{id}")
-    public ResponseEntity<Agence> updateAgence(@PathVariable(value = "id") Integer id,
+    public ResponseEntity<Agence> modifier_agence(@PathVariable(value = "id") Integer id,
                                                @RequestBody Agence agenceDetails)
             throws ResourceNotFoundException {
         Agence agence= agenceRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Agence not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Agence n'existe pas"));
 
 
         agence.setCodeAgence(agenceDetails.getCodeAgence());
@@ -60,10 +60,10 @@ public class AgenceController {
     }
 
     @DeleteMapping("/Agences/{id}")
-    public Map<String, Boolean> deleteAgence(@PathVariable(value = "id") Integer id)
+    public Map<String, Boolean> supprimer_agence(@PathVariable(value = "id") Integer id)
             throws ResourceNotFoundException {
         Agence agence= agenceRepositories.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Agence not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Agence n'existe pas"));
         agenceRepositories.delete(agence);
         Map<String, Boolean> response = new HashMap<>();
         response.put("delete", Boolean.TRUE);

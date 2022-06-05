@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import javax.transaction.Transactional;
 import java.sql.Date;
 
 @Entity
@@ -13,7 +13,8 @@ import java.sql.Date;
 @ToString
 @NoArgsConstructor
 @Table
-public class suivi_doc_1ereAge {
+
+public class Suivi_doc_1erâge {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,19 +24,21 @@ public class suivi_doc_1ereAge {
     private int Nombre_De_pages;
     private Date Date_De_creation_Du_Document;
     private Date Date_d_entree_Du_Document;
+    private boolean destruction=false;
     private int Nombre_De_documents ;
     @Column(unique =true)
     private int codedocument;
-    private int emplacement_physique;
+    private int empl_physique;
     private int numero_d_ordre;
     @ManyToOne
     @JoinColumn(name ="designation_Nomenclature",referencedColumnName = "designation_Nomenclature")
     private Nomenclature designation_Nomenclature;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name ="libelleDirection")
     private Direction_Regionale libelleDirection;
-   //
-   @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.REMOVE)
    @JoinColumn(name ="codedirection" )
    private Direction_Regionale codedirection;
 
